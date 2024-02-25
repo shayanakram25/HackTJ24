@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creators</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      body {
+        margin: 0; /* Remove default body margin */
+        padding: 0; /* Remove default body padding */
+      }
+
+      .container {
+        display: flex;
+        position: relative;
+        margin-left: 0; /* Ensure there's no left margin */
+      }
+
+      .creators-list {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-grow: 1;
+      }
+
+      .sidebar {
+        background-color: #4b4276;
+        color: #fff;
+        padding: 20px;
+        width: 200px;
+        height: 100vh;
+      }
+
+      .sidebar h2 {
+        text-align: center;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        margin-bottom: 30px;
+      }
+
+      .sidebar ul li a {
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-size: 28px;
+      }
+
+      .sidebar ul li a.active {
+        font-weight: bold;
+      }
+
+      .sidebar ul li a i {
+        margin-right: 10px;
+      }
+
+      .creators-list h2 {
+        text-align: center; /* Center the heading */
+        margin-bottom: 20px; /* Add some space below the heading */
+      }
+
+      .creators-list ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center items horizontally */
+      }
+
+      .creators-list ul li {
+        display: flex;
+        flex-direction: column; /* Arrange items vertically */
+        align-items: center; /* Center items horizontally */
+        margin-bottom: 40px; /* Space between rows */
+        width: calc(50% - 20px); /* Half of the container width minus margin */
+      }
+
+      .profile-pic {
+        width: 200px; /* Increase size of profile picture */
+        height: 200px;
+        border-radius: 50%;
+        margin-bottom: 20px; /* Increase space between image and name */
+        background-color: #ddd; /* Placeholder color */
+        background-size: cover;
+        background-position: center;
+      }
+
+      .profile-name {
+        font-size: 24px; /* Increase size of profile name */
+        margin-bottom: 10px; /* Increase space between name and next row */
+      }
+
+      .logo {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 100px; /* Adjust as needed */
+        height: auto; /* Maintain aspect ratio */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="sidebar">
+        <h2>Navbar</h2>
+        <ul>
+          <li>
+            <a href="/creators" class="active"
+              ><i class="fas fa-user"></i>Creators</a
+            >
+          </li>
+          <li>
+            <a href="/faq"><i class="fas fa-question"></i>FAQ</a>
+          </li>
+          <li>
+            <a href="/overview"><i class="fas fa-info"></i>Overview</a>
+          </li>
+          <li>
+            <a href="/submit"><i class="fas fa-file-upload"></i>Submit</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="creators-list">
+        <h2>Creators</h2>
+        <ul>
+          <li>
+            <div
+              class="profile-pic"
+              style="background-image: url('static/shayan.jpg')"
+            ></div>
+            <span class="profile-name">Shayan Akram</span>
+          </li>
+          <li>
+            <div
+              class="profile-pic"
+              style="background-image: url('static/sidd.jpg')"
+            ></div>
+            <span class="profile-name">Siddarth Kumar</span>
+          </li>
+          <li>
+            <div
+              class="profile-pic"
+              style="background-image: url('static/jake.jpg')"
+            ></div>
+            <span class="profile-name">Jacob Foster</span>
+          </li>
+          <li>
+            <div
+              class="profile-pic"
+              style="background-image: url('static/ditz.jpg')"
+            ></div>
+            <span class="profile-name">Aditya Nagar</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <img src="static/logo.png" alt="Logo" class="logo" />
+  </body>
+</html>
