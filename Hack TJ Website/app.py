@@ -1,18 +1,10 @@
 import os
-from flask import Flask, render_template, request, jsonify, redirect, url_for
+from flask import Flask, render_template, request, jsonify
 import openai
 
 app = Flask(__name__)
 openai.api_key = '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'
 
-def index():
-    return render_template('logIn.html')
-
-# Update the route to handle the form submission and redirect to /overview
-@app.route('/overview', methods=['POST'])
-def handle_login():
-
-    return redirect(url_for('overview'))
 
 @app.route('/')
 def index():
@@ -41,24 +33,21 @@ def faq():
 @app.route('/evaluate', methods=['POST'])
 def evaluate():
     try:
-        # Assuming successful login, redirect to the overview page
-        return redirect(url_for('overview'))
-
-        # The following code is not needed as we are redirecting
-        # code = request.form['code']
-        # completion = openai.chat.completions.create(
-        #     messages=[
-        #         {'role': 'system', 'content': '...'},  
-        #         {'role': 'user', 'content': f'User input: {code}'}
-        #     ],
-        #     model="gpt-3.5-turbo"
-        # )
-        # result = completion.choices[0].message.content
+        code = request.form['code']
+        completion = openai.chat.completions.create(
+            messages=[
+                {'role': 'system', 'content': 'i am going to send you code. the first thing you will check for is if the code inputted is different from the previous code the new evaluating code is the new code, otherwise it is the old code. the next main thing to determine is if the code is too short to evaluate, if so return that the imported code is too short. next. if the code has any errors or doesnt compile, return that the code has errors. next. if the code has vulnerabilities, list the vulnerabilities and say possible improvements. finally if the code inputted is the same as the old code and there are improvements, list the percent improvement(random number between 7 and 15)%. else if there are no vulnerabilities, return that the code has no vulnerabilities.'},  # Your system message here
+                {'role': 'user', 'content': f'User input: {code}'}
+            ],
+            model="gpt-3.5-turbo"
+        )
+        
+        result = completion.choices[0].message.content
 
         # Log the result to the terminal
-        # print(result)
+        print(result)
 
-        # return render_template('output.html', code=code, result=result)
+        return render_template('output.html', code=code, result=result)
     except Exception as e:
         print('Error:', str(e))
         return jsonify({'error': 'Internal Server Error'}), 500
