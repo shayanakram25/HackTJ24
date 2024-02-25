@@ -1,118 +1,226 @@
-<!-- output.html -->
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Output</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #183028; /* Dark green background color */
-            color: white;
-            font-family: 'Vollkorn', serif; /* Change font to Vollkorn */
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #183028;
+        color: white;
+        font-family: "Vollkorn", serif;
+      }
 
-        .container {
-            display: flex;
-        }
+      .container {
+        display: flex;
+      }
 
-        .sidebar {
-            background-color: #4b4276;
-            color: #fff;
-            padding: 20px;
-            width: 200px;
-            height: 100vh;
-        }
+      .sidebar {
+        background-color: #4b4276;
+        color: #fff;
+        padding: 20px;
+        width: 200px;
+        height: 100vh;
+      }
 
-        .sidebar h2 {
-            text-align: center;
-        }
+      .sidebar h2 {
+        text-align: center;
+      }
 
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
 
-        .sidebar ul li {
-            margin-bottom: 30px;
-        }
+      .sidebar ul li {
+        margin-bottom: 30px;
+      }
 
-        .sidebar ul li a {
-            color: #fff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            font-size: 28px;
-        }
+      .sidebar ul li a {
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-size: 28px;
+      }
 
-        .sidebar ul li a.active {
-            font-weight: bold;
-        }
+      .sidebar ul li a.active {
+        font-weight: bold;
+      }
 
-        .sidebar ul li a i {
-            margin-right: 10px;
-        }
+      .sidebar ul li a i {
+        margin-right: 10px;
+      }
 
-        .output {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #fff; /* Match the text color */
-        }
+      .output {
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #fff;
+      }
 
-        .output h2 {
-            margin-bottom: 20px;
-            font-size: 36px; /* Increase font size */
-            text-decoration: underline; /* Add underline */
-        }
+      .output h2 {
+        margin-bottom: 20px;
+        font-size: 36px;
+        text-decoration: underline;
+        text-align: center;
+      }
 
-        .output p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+      .output p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
 
-        .logo {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 100px;
-            height: auto;
-        }
+      .logo {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 100px;
+        height: auto;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <nav class="sidebar">
-            <h2>Navigation</h2>
+      <nav class="sidebar">
+        <h2>Navigation</h2>
+        <ul>
+          <li>
+            <a href="/creators"><i class="fas fa-user"></i>Creators</a>
+          </li>
+          <li>
+            <a href="/faq"><i class="fas fa-question"></i>FAQ</a>
+          </li>
+          <li>
+            <a href="/overview"><i class="fas fa-info"></i>Overview</a>
+          </li>
+          <li>
+            <a href="/output" class="active"
+              ><i class="fas fa-file-alt"></i>Output</a
+            >
+          </li>
+          <li>
+            <a href="/submit"><i class="fas fa-file-upload"></i>Submit</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="output">
+        <h2>FAQ</h2>
+        <ul>
+          <li>
+            <strong
+              >How does the website identify potential security vulnerabilities
+              in a given block of code?</strong
+            >
             <ul>
-                <li>
-                    <a href="/creators"><i class="fas fa-user"></i>Creators</a>
-                </li>
-                <li>
-                    <a href="/faq"><i class="fas fa-question"></i>FAQ</a>
-                </li>
-                <li>
-                    <a href="/overview"><i class="fas fa-info"></i>Overview</a>
-                </li>
-                <li>
-                    <a href="/output" class="active"><i class="fas fa-file-alt"></i>Output</a>
-                </li>
-                <li>
-                    <a href="/submit"><i class="fas fa-file-upload"></i>Submit</a>
-                </li>
+              <li>
+                The website utilizes a combination of static and dynamic
+                analysis, scanning for common coding vulnerabilities and
+                executing the code in a simulated environment to identify
+                runtime issues.
+              </li>
             </ul>
-        </nav>
-        <div class="output">
-            <h2>Output</h2>
-            <p>Your output content goes here...</p>
-        </div>
+          </li>
+          <li>
+            <strong
+              >What programming languages does the website support for code
+              analysis?</strong
+            >
+            <ul>
+              <li>
+                The website supports a wide range of programming languages,
+                including but not limited to Java, Python, C++, JavaScript,
+                Ruby, and PHP, to cater to diverse development environments.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >Can the website handle both frontend and backend code for
+              security analysis?</strong
+            >
+            <ul>
+              <li>
+                Yes, the website is designed to analyze both frontend and
+                backend code, ensuring comprehensive coverage for web
+                applications. It assesses vulnerabilities in client-side
+                scripts, server-side logic, and their interactions.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >How frequently is the vulnerability database updated, and how
+              does the website stay current with the latest security
+              threats?</strong
+            >
+            <ul>
+              <li>
+                The vulnerability database is regularly updated to stay abreast
+                of the latest security threats. The website incorporates
+                automated tools and manual curation to ensure that it reflects
+                the most recent vulnerabilities and best practices.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >What types of security vulnerabilities does the website typically
+              identify?</strong
+            >
+            <ul>
+              <li>
+                The website can identify various security vulnerabilities, such
+                as SQL injection, cross-site scripting (XSS), cross-site request
+                forgery (CSRF), insecure file uploads, and other common issues
+                that may compromise the security of a web application.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >Is there an option for developers to receive detailed reports on
+              identified vulnerabilities, including suggested fixes and best
+              practices?</strong
+            >
+            <ul>
+              <li>
+                Yes, the website generates detailed reports for developers,
+                outlining identified vulnerabilities along with suggested fixes
+                and best practices to remediate the issues. This helps
+                developers understand and address security concerns effectively.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >How does the website ensure the confidentiality and privacy of
+              the uploaded code during the analysis process?</strong
+            >
+            <ul>
+              <li>
+                The website employs robust encryption protocols and follows
+                industry best practices to ensure the confidentiality and
+                privacy of uploaded code. The analysis is performed in a secure,
+                isolated environment, and the results are accessible only to
+                authorized users.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
-    <img src="static/codeguardlogo.png" alt="Logo" class="logo">
-</body>
+    <img src="static/codeguardlogo.png" alt="Logo" class="logo" />
+  </body>
 </html>
