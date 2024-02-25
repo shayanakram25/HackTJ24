@@ -1,7 +1,18 @@
-from flask import Flask, render_template, request, jsonify
+import os
+from flask import Flask, render_template, request, jsonify, redirect, url_for
+import openai
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__)
+openai.api_key = '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'
 
+def index():
+    return render_template('logIn.html')
+
+# Update the route to handle the form submission and redirect to /overview
+@app.route('/overview', methods=['POST'])
+def handle_login():
+
+    return redirect(url_for('overview'))
 
 @app.route('/')
 def index():
@@ -29,7 +40,28 @@ def faq():
 
 @app.route('/evaluate', methods=['POST'])
 def evaluate():
-    return render_template('output.html')
+    try:
+        # Assuming successful login, redirect to the overview page
+        return redirect(url_for('overview'))
+
+        # The following code is not needed as we are redirecting
+        # code = request.form['code']
+        # completion = openai.chat.completions.create(
+        #     messages=[
+        #         {'role': 'system', 'content': '...'},  
+        #         {'role': 'user', 'content': f'User input: {code}'}
+        #     ],
+        #     model="gpt-3.5-turbo"
+        # )
+        # result = completion.choices[0].message.content
+
+        # Log the result to the terminal
+        # print(result)
+
+        # return render_template('output.html', code=code, result=result)
+    except Exception as e:
+        print('Error:', str(e))
+        return jsonify({'error': 'Internal Server Error'}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
