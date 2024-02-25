@@ -1,2 +1,2 @@
 # HackTJ25
-2025 Hack TJ Website
+2024 Hack TJ Website
