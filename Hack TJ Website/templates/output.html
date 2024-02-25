@@ -1,99 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Output</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Evaluation Result</title>
     <style>
-      .sidebar {
-        background-color: #4b4276;
-        color: #fff;
-        padding: 20px;
-        width: 200px;
-        height: 100vh;
-      }
+        body {
+            font-family: 'Vollkorn', serif; /* Change font to Vollkorn */
+            background-color: #183028; /* Dark green background color */
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
 
-      .sidebar h2 {
-        text-align: center;
-      }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 36px; /* Increase font size */
+            text-decoration: underline; /* Add underline */
+        }
 
-      .sidebar ul {
-        list-style: none;
-        padding: 0;
-      }
+        p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
 
-      .sidebar ul li {
-        margin-bottom: 30px;
-      }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
 
-      .sidebar ul li a {
-        color: #fff;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        font-size: 28px;
-      }
+        li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
 
-      .sidebar ul li a.active {
-        font-weight: bold;
-      }
+        strong,
+        em {
+            font-style: italic;
+        }
 
-      .sidebar ul li a i {
-        margin-right: 10px;
-      }
-
-      .logo {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 100px;
-        height: auto;
-      }
-
-      .logo {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 100px; /* Adjust as needed */
-        height: auto; /* Maintain aspect ratio */
-      }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-right: 10px;
+        }
     </style>
-  </head>
-  <body>
-    <div class="container">
-      <nav class="sidebar">
-        <h2>Navbar</h2>
+</head>
+
+<body>
+    <div>
+        <h1>Code Evaluation Result</h1>
+        <p>Your code has the following vulnerabilities:</p>
         <ul>
-          <li>
-            <a href="/creators" class="active"
-              ><i class="fas fa-user"></i>Creators</a
-            >
-          </li>
-          <li>
-            <a href="/faq"><i class="fas fa-question"></i>FAQ</a>
-          </li>
-          <li>
-            <a href="/overview"><i class="fas fa-info"></i>Overview</a>
-          </li>
-          <li>
-            <a href="/submit"><i class="fas fa-file-upload"></i>Submit</a>
-          </li>
+            <li>
+                <img src="sql-injection-icon.png" alt="SQL Injection">
+                <div>
+                    SQL Injection Vulnerability: The code directly uses user input ${userId} in the SQL query without any validation or sanitization, making it vulnerable to SQL injection attacks.
+                    <br>
+                    <strong>Possible improvements:</strong>
+                    <ul>
+                        <li>Use parameterized queries or prepared statements to prevent SQL injection attacks.</li>
+                        <li>Validate and sanitize user input before using them in SQL queries.</li>
+                    </ul>
+                    <br>
+                    <em>Estimated improvement: 10%</em>
+                </div>
+            </li>
+            <!-- Add more vulnerabilities as needed -->
         </ul>
-      </nav>
-      <div class="main-content center-content">
-        <div class="code-container">
-          <h2>Output</h2>
-        </div>
-      </div>
     </div>
-    <img src="static/logo.png" alt="Logo" class="logo" />
-  </body>
+</body>
+
 </html>
