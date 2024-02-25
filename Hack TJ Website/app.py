@@ -47,7 +47,7 @@ def evaluate():
         # Log the result to the terminal
         print(result)
 
-        return render_template('output.html', code=code, result=result)
+        return render_template('output.html', code=code, result=result)  # Pass result to the template
     except Exception as e:
         print('Error:', str(e))
         return jsonify({'error': 'Internal Server Error'}), 500
