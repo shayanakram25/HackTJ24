@@ -2,73 +2,159 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Code Evaluation Result</title>
+    <title>Overview</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <style>
       body {
-        font-family: "Vollkorn", serif;
-        background-color: #183028;
-        color: white;
+        font-family: Arial, sans-serif;
+        background-color: #e6eac1;
         margin: 0;
         padding: 0;
+      }
+
+      .container {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        position: relative;
+      }
+
+      .sidebar {
+        background-color: #4b4276;
+        color: #fff;
+        padding: 20px;
+        width: 200px;
         height: 100vh;
       }
 
-      h1 {
-        margin-bottom: 20px;
-        font-size: 36px;
-        text-decoration: underline;
+      .sidebar h2 {
+        text-align: center;
       }
 
-      p {
-        font-size: 18px;
-        margin-bottom: 10px;
-      }
-
-      ul {
-        list-style-type: none;
+      .sidebar ul {
+        list-style: none;
         padding: 0;
-        margin: 0;
-        text-align: left;
       }
 
-      li {
-        margin-bottom: 10px;
-        font-size: 16px;
+      .sidebar ul li {
+        margin-bottom: 30px;
+      }
+
+      .sidebar ul li a {
+        color: #fff;
+        text-decoration: none;
         display: flex;
         align-items: center;
+        font-size: 28px;
       }
 
-      strong,
-      em {
-        font-style: italic;
+      .sidebar ul li a.active {
+        font-weight: bold;
       }
 
-      img {
-        max-width: 100%;
-        height: auto;
+      .sidebar ul li a i {
         margin-right: 10px;
+      }
+
+      .content {
+        padding: 20px;
+      }
+
+      .content p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .logo {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 100px;
+        height: auto;
       }
     </style>
   </head>
-
   <body>
-    <div>
-      <h1>Code Evaluation Result</h1>
-      <p>Your code has the following vulnerabilities:</p>
-      <ul>
-        <li>
-          <img src="sql-injection-icon.png" alt="SQL Injection" />
-          <div>
-            <strong>{{ result }}</strong>
-          </div>
-        </li>
-      </ul>
+    <div class="container">
+      <nav class="sidebar">
+        <h2>Navbar</h2>
+        <ul>
+          <li>
+            <a href="/creators" class="active"
+              ><i class="fas fa-user"></i>Creators</a
+            >
+          </li>
+          <li>
+            <a href="/faq"><i class="fas fa-question"></i>FAQ</a>
+          </li>
+          <li>
+            <a href="/overview"><i class="fas fa-info"></i>Overview</a>
+          </li>
+          <li>
+            <a href="/output"><i class="fas fa-file-alt"></i>Output</a>
+          </li>
+          <li>
+            <a href="/submit"><i class="fas fa-file-upload"></i>Submit</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="content">
+        <h1>Welcome to CodeGuardian</h1>
+        <p>
+          Your premier destination for ensuring the robust security of your
+          codebase. Our cutting-edge platform empowers developers and
+          organizations to fortify their applications against vulnerabilities
+          with unparalleled precision.
+        </p>
+        <p>
+          CodeGuardian employs state-of-the-art static code analysis techniques,
+          meticulously scrutinizing your code for potential insecurities. Our
+          advanced algorithms detect vulnerabilities, ranging from common
+          pitfalls to sophisticated threats, ensuring a comprehensive security
+          assessment.
+        </p>
+        <p>
+          Upon analysis completion, our platform provides detailed, actionable
+          insights through a user-friendly interface. Tailored suggestions for
+          code improvement are presented, guiding you towards best practices and
+          industry standards. CodeGuardian doesn't just identify issues; it
+          serves as your trusted advisor in elevating the security posture of
+          your software.
+        </p>
+        <p>
+          Our commitment to excellence extends beyond vulnerability detection.
+          CodeGuardian prioritizes user experience, offering a seamless and
+          intuitive interface that simplifies the code review process. The
+          platform is designed for both seasoned developers and those new to
+          security practices, fostering a collaborative and educational
+          environment.
+        </p>
+        <p>
+          Rest easy knowing that CodeGuardian is at the forefront of code
+          security, evolving alongside the ever-changing landscape of cyber
+          threats. Elevate your coding practices, fortify your applications, and
+          embark on a journey towards code excellence with CodeGuardian - where
+          security meets sophistication.
+        </p>
+      </div>
     </div>
+    <!-- Logo -->
+    <img src="static/codeguardlogo.png" alt="Logo" class="logo" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#language").select2();
+      });
+    </script>
   </body>
 </html>
